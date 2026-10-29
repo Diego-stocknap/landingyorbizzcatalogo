@@ -1,0 +1,12 @@
+YORBIZZ LANDING — V6 (29/10/2026)
+
+Correção: todas as seções da V4 foram preservadas.
+A faixa de clientes agora tem um carrossel horizontal de uma linha,
+com animação contínua para a esquerda, logos ligeiramente maiores,
+"Mais estabelecimentos" ao fim e loop sem quebra.
+
+ARQUIVOS: abra index.html para visualizar ou publique todos os arquivos
+desta pasta juntos, mantendo a pasta assets. O HTML único separado
+(yorbizz-landing-v6-completa.html) é autossuficiente.
+
+Não foram alterados dados reais nem o sistema em produção.

@@ -1,0 +1,14 @@
+
+/* V7: canais em trilho único, animação infinita sem alterar os ícones */
+.channels-section{overflow:hidden}
+.channels-marquee{width:100%;overflow:hidden;min-width:0;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent)}
+.channels-track{display:flex;align-items:stretch;width:max-content;max-width:none;flex-wrap:nowrap;animation:yorbizzChannelsLoop 39s linear infinite;will-change:transform}
+.channels-sequence{display:flex;align-items:stretch;flex-wrap:nowrap;gap:12px;flex:none;padding-right:12px}
+.channels-marquee .channel-item{display:flex;flex:0 0 125px;min-width:125px;min-height:128px;box-sizing:border-box}
+.channels-marquee:hover .channels-track{animation-play-state:paused}
+@keyframes yorbizzChannelsLoop{to{transform:translateX(-50%)}}
+/* O logo do estabelecimento usa as mesmas iniciais e marca de cor do preview público; a marca da plataforma permanece Yorbizz. */
+.dashboard-bella-avatar{position:relative;display:flex;align-items:center;justify-content:center;flex:none;width:32px;height:32px;background:#3b1d19;color:white;border-radius:50%;font-size:14px;font-weight:900;letter-spacing:-.06em;text-transform:lowercase}
+.dashboard-bella-avatar .lime-square{position:absolute;width:5px;height:5px;background:#b9ff66;top:6px;right:5px;border-radius:1px}
+@media(max-width:600px){.channels-marquee .channel-item{flex-basis:110px;min-width:110px;min-height:112px}.channels-track{animation-duration:34s}}
+@media(prefers-reduced-motion:reduce){.channels-track{animation:none}.channels-marquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.channels-sequence[aria-hidden="true"]{display:none}}
