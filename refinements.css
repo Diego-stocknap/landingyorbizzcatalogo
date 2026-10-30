@@ -237,3 +237,103 @@
 .dashboard-story .appearance-mini-screen .mini-p-content span{height:19px}
 .dashboard-story .appearance-mini-screen>b{display:block;font-size:7px;line-height:1.2}
 @media(max-width:650px){.dashboard-story .appearance-area{grid-template-columns:minmax(0,1fr) 144px;gap:6px}.dashboard-story .appearance-mini-phone{width:144px;min-width:144px;max-width:144px;height:260px;min-height:260px;max-height:260px}}
+
+
+/* V18 — final adjustment: make the dashboard preview phone slightly slimmer.
+   Keep the frame fixed at 136 × 246 so it feels narrower without changing the rest of the landing page. */
+.dashboard-story .appearance-area {
+  grid-template-columns:minmax(0,1fr) 136px !important;
+  align-items:start;
+}
+.dashboard-story .appearance-area > .appearance-mini-phone {
+  box-sizing:border-box !important;
+  width:136px !important;
+  min-width:136px !important;
+  max-width:136px !important;
+  height:246px !important;
+  min-height:246px !important;
+  max-height:246px !important;
+  aspect-ratio:auto !important;
+  padding:5px !important;
+  border:5px solid #233a30 !important;
+  border-radius:24px !important;
+  justify-self:end !important;
+  align-self:start !important;
+  overflow:hidden !important;
+  flex:none !important;
+}
+.dashboard-story .appearance-mini-phone > .appearance-mini-screen {
+  box-sizing:border-box;
+  width:100%;
+  height:100%;
+  min-height:0;
+  max-height:100%;
+  overflow:hidden;
+}
+.dashboard-story .appearance-mini-screen .mini-p-cover {
+  height:52px;
+  min-height:52px;
+  max-height:52px;
+}
+.dashboard-story .appearance-mini-screen .mini-p-identity {
+  box-sizing:border-box;
+  min-width:0;
+  max-width:100%;
+}
+.dashboard-story .appearance-mini-screen .mini-p-identity > strong {
+  font-size:10px;
+  line-height:1.12;
+  overflow-wrap:normal;
+}
+.dashboard-story .appearance-mini-screen .mini-p-identity > small {
+  font-size:7px;
+  line-height:1.18;
+}
+.dashboard-story .appearance-mini-screen[data-mode="perfil"] .mini-p-logo,
+.dashboard-story .appearance-mini-screen[data-mode="profissional"] .mini-p-logo {
+  width:38px;
+  height:38px;
+}
+.dashboard-story .appearance-mini-screen[data-mode="vitrine"] .mini-p-identity {
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr);
+  column-gap:4px;
+  align-items:center;
+  text-align:left;
+  padding:8px 3px 2px;
+}
+.dashboard-story .appearance-mini-screen[data-mode="vitrine"] .mini-p-logo {
+  width:27px;
+  height:27px;
+  margin:0;
+  grid-column:1;
+  grid-row:1/3;
+  font-size:8px;
+  border-radius:8px;
+}
+.dashboard-story .appearance-mini-screen[data-mode="vitrine"] .mini-p-identity > strong,
+.dashboard-story .appearance-mini-screen[data-mode="vitrine"] .mini-p-identity > small {
+  min-width:0;
+  max-width:100%;
+  grid-column:2;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.dashboard-story .appearance-mini-screen .mini-p-content {
+  gap:5px;
+  margin:8px 5px 6px;
+}
+.dashboard-story .appearance-mini-screen .mini-p-content span {
+  height:17px;
+}
+.dashboard-story .appearance-mini-screen > b {
+  font-size:7px;
+  line-height:1.15;
+}
+@media (max-width:650px) {
+  .dashboard-story .appearance-area {
+    grid-template-columns:minmax(0,1fr) 136px !important;
+    gap:6px;
+  }
+}
