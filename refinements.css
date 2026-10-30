@@ -337,3 +337,46 @@
     gap:6px;
   }
 }
+
+
+/* V19 — Botão flutuante do WhatsApp */
+.yb-whatsapp-float {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  width: 58px !important;
+  height: 58px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #25D366 !important;
+  border-radius: 50% !important;
+  z-index: 99999 !important;
+  box-shadow: 0 6px 22px rgba(0,0,0,.25) !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.yb-whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 9px 28px rgba(0,0,0,.3) !important;
+}
+
+.yb-whatsapp-float svg {
+  width: 31px !important;
+  height: 31px !important;
+  display: block !important;
+  fill: white !important;
+  color: white !important;
+}
+
+@media (max-width: 650px) {
+  .yb-whatsapp-float {
+    width: 54px !important;
+    height: 54px !important;
+    right: 16px !important;
+    bottom: 18px !important;
+  }
+}
