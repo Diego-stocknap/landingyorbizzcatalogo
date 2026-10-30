@@ -14,7 +14,7 @@
   };
   let current = 0, playing = !reduceMotion, isVisible = false, waitingUntil = 0;
   let lastSwitch = performance.now();
-  const delay = 7200;
+  const delay = 600000; // V8: scripted guided navigation controls screen changes
   const nav = [...root.querySelectorAll('[data-panel]')];
   const views = [...root.querySelectorAll('[data-view]')];
   const title = root.querySelector('#dash-caption-title');

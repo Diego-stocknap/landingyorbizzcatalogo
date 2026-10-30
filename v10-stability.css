@@ -1,0 +1,2 @@
+/* Keep the landing visible even if an entrance animation cannot initialize. */
+.reveal{opacity:1!important;transform:none!important}

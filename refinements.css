@@ -191,7 +191,7 @@
  .dash-stat-cards{gap:5px}.dash-stat-cards>div{padding:9px 7px}.dash-stat-cards small{font-size:7px}.dash-stat-cards strong{font-size:19px}.dash-stat-cards em{font-size:7px}
  .overview-activity{padding:11px;gap:9px}.overview-activity strong{font-size:10px}.overview-donut{height:72px;width:72px}
  .dash-filter{align-items:flex-start;flex-direction:column}.dash-analysis-grid{grid-template-columns:1fr}.stat-bars{height:79px}.origin-card{display:none}.dash-product-insights strong{font-size:8px}
- .appearance-area{grid-template-columns:minmax(0,1fr) 85px;gap:6px}.appearance-options{padding:8px}.theme-options{gap:3px}.theme-card{padding:3px}.theme-card.active{padding:2px}.theme-art{height:36px}.theme-card strong{font-size:8px}.theme-card small{font-size:6px}.appearance-mini-phone{border-width:3px;border-radius:14px;padding:3px;min-height:190px}.mini-p-cover{height:36px}.mini-p-content{margin:7px 3px;gap:4px}.mini-p-content span{height:18px}.appearance-mini-screen>strong{font-size:8px}.appearance-mini-screen>small{font-size:6px}.mini-p-logo{height:26px;width:26px;font-size:8px;margin-top:-12px}.appearance-mini-screen>b{font-size:6px}
+ .appearance-area{grid-template-columns:minmax(0,1fr) 154px;gap:6px}.appearance-options{padding:8px}.theme-options{gap:3px}.theme-card{padding:3px}.theme-card.active{padding:2px}.theme-art{height:36px}.theme-card strong{font-size:8px}.theme-card small{font-size:6px}
  .appearance-swatches{margin-top:10px}.appearance-swatches span{font-size:8px}
  .product-table-head,.product-table-row{grid-template-columns:2fr .9fr .7fr}.product-table-head span:nth-child(4),.product-table-row em{display:none}.product-table-row{gap:3px;font-size:7px}.product-table-row strong{font-size:8px}.product-table-row img{width:28px;height:28px}
  .assistant-window{grid-template-columns:29% 1fr;min-height:240px}.assistant-conversations{padding:8px 4px}.assistant-conversations>span{padding:7px 4px}.assistant-conversations b{font-size:7px}.assistant-conversations small{font-size:7px}.assistant-messages{padding:9px;gap:6px}.chat-msg{font-size:8px;padding:7px}
@@ -213,3 +213,12 @@
 .fidelity-context-header .loyalty-bar{height:8px;margin:9px 0 0;background:#66706b}.fidelity-context-header .loyalty-bar>span{border-radius:10px}
 .fidelity-context-below{padding:20px 5px 1px}.fidelity-context-below strong{font-size:13px}.fidelity-context-below p{font-size:12px;color:#748174;margin:6px 0 0}
 @media(max-width:650px){.fidelity-context-example{padding:12px}.fidelity-context-header{padding:8px;min-height:85px}.fidelity-context-header .loyalty-card{width:154px;padding:8px}.fidelity-context-header .loyalty-top>span,.fidelity-context-header .loyalty-top strong{font-size:8px}.fidelity-context-header .loyalty-top .ico{height:11px;width:11px}.fidelity-context-business>span{width:32px;height:32px;font-size:13px}.fidelity-context-business strong{font-size:10px}.fidelity-context-business small{font-size:8px}.fidelity-context-topline{font-size:8px}}
+
+/* V13: the appearance preview keeps the V7 fixed 154px column even on phones.
+   Only the content inside the device changes between visual models. */
+.appearance-area{grid-template-columns:minmax(0,1fr) 154px}
+.appearance-mini-phone{box-sizing:border-box;width:154px;min-width:154px;max-width:154px;align-self:start}
+@media(max-width:650px){
+  .appearance-area{grid-template-columns:minmax(0,1fr) 154px;gap:6px}
+  .appearance-mini-phone{width:154px;min-width:154px;max-width:154px}
+}
