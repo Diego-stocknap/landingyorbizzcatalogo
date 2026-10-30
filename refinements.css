@@ -222,3 +222,18 @@
   .appearance-area{grid-template-columns:minmax(0,1fr) 154px;gap:6px}
   .appearance-mini-phone{width:154px;min-width:154px;max-width:154px}
 }
+
+/* V14 — Only the appearance preview: fixed device geometry at every viewport. */
+.dashboard-story .appearance-area{grid-template-columns:minmax(0,1fr) 144px;align-items:start}
+.dashboard-story .appearance-mini-phone{box-sizing:border-box;display:block;flex:none;justify-self:end;align-self:start;width:144px;min-width:144px;max-width:144px;height:260px;min-height:260px;max-height:260px;padding:5px;border-width:5px;overflow:hidden}
+.dashboard-story .appearance-mini-screen{box-sizing:border-box;width:100%;height:100%;min-height:0;max-height:100%;overflow:hidden}
+.dashboard-story .appearance-mini-screen .mini-p-cover{height:53px;min-height:53px;max-height:53px}
+.dashboard-story .appearance-mini-screen .mini-p-identity{box-sizing:border-box;min-width:0;max-width:100%}
+.dashboard-story .appearance-mini-screen .mini-p-identity>strong{font-size:11px;line-height:1.15;overflow-wrap:normal;word-break:normal}
+.dashboard-story .appearance-mini-screen .mini-p-identity>small{font-size:8px;line-height:1.25;overflow-wrap:normal;word-break:normal}
+.dashboard-story .appearance-mini-screen[data-mode="vitrine"] .mini-p-identity{grid-template-columns:32px minmax(0,1fr);column-gap:4px;padding:9px 3px 2px}
+.dashboard-story .appearance-mini-screen[data-mode="vitrine"] .mini-p-logo{width:31px;height:31px;font-size:10px}
+.dashboard-story .appearance-mini-screen .mini-p-content{gap:5px;margin:10px 5px 6px}
+.dashboard-story .appearance-mini-screen .mini-p-content span{height:19px}
+.dashboard-story .appearance-mini-screen>b{display:block;font-size:7px;line-height:1.2}
+@media(max-width:650px){.dashboard-story .appearance-area{grid-template-columns:minmax(0,1fr) 144px;gap:6px}.dashboard-story .appearance-mini-phone{width:144px;min-width:144px;max-width:144px;height:260px;min-height:260px;max-height:260px}}

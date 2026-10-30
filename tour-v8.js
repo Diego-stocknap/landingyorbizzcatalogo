@@ -20,13 +20,13 @@
   let visible=false,stopped=false,step=0,timer=null;
   const panelPause=root.querySelector('.panel-autoplay');
   function running(){return visible&&!document.hidden&&!stopped&&panelPause?.getAttribute('aria-pressed')==='true'}
-  const observer=new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)start();else{clearTimeout(timer);cursor.classList.remove('is-on')}},{threshold:.15});observer.observe(root);
+  const observer=new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible){start()}else{clearTimeout(timer);timer=null;cursor.classList.remove('is-on')}},{threshold:0,rootMargin:'0px 0px -12% 0px'});observer.observe(root);
   function move(el){if(!el)return false;let a=el.getBoundingClientRect(),r=root.getBoundingClientRect();cursor.style.transform='translate('+(a.left-r.left+Math.min(a.width*.45,Math.max(8,a.width-9)))+'px,'+(a.top-r.top+Math.min(a.height*.5,Math.max(6,a.height-4)))+'px)';cursor.classList.add('is-on');return true}
   function click(){cursor.classList.remove('is-click');void cursor.offsetWidth;cursor.classList.add('is-click');}
   function start(){if(timer||!running())return;timer=setTimeout(tick,550)}
   function tick(){timer=null;if(!running())return;const x=workflow[step%workflow.length];let target=null;
-    if(x.kind==='go'){target=nav(x.key);move(target);timer=setTimeout(()=>{if(!running())return tick();click();target?.click();step++;timer=setTimeout(tick,x.delay)},900);return;}
-    if(x.kind==='mode'){target=appearance()?.querySelector('[data-theme="'+x.mode+'"]');move(target);timer=setTimeout(()=>{if(!running())return tick();click();target?.click();step++;timer=setTimeout(tick,x.delay)},850);return;}
+    if(x.kind==='go'){target=nav(x.key);move(target);timer=setTimeout(()=>{if(!running()){timer=null;return}click();target?.click();step++;timer=setTimeout(tick,x.delay)},900);return;}
+    if(x.kind==='mode'){target=appearance()?.querySelector('[data-theme="'+x.mode+'"]');move(target);timer=setTimeout(()=>{if(!running()){timer=null;return}click();target?.click();step++;timer=setTimeout(tick,x.delay)},850);return;}
     target=root.querySelector('.dashboard-view.active '+x.sel);if(target){move(target)}step++;timer=setTimeout(tick,x.delay);
   }
   // Manual navigation pauses the guided cursor until the tour is restarted.
